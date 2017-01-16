@@ -1,0 +1,25 @@
+---
+title: "Homework 0"
+author: MA 204
+output: html_document
+---
+
+**General Instructions for Homeworks**
+
+- Textbook: 	Probability with Applications and R by Dobrow
+
+- Format: 	Typed or handwritten. Answer clearly and concisely. Show all work - credit will not be given for numerical solutions that appear without explanation.. Use smooth edged paper (not ripped from a notebook) and staple pages together.
+
+- Turn in problems with a * only
+
+- On the top of every homework, write the names of everyone you collaborated with in doing problems. All students, staff and faculty are bound by the Skidmore College Honor Code.
+
+
+**Assignment**
+
+Part 1: 1.9, 1.10*, 1.13
+
+Part 2: Send me an introductory email telling me about yourself (including your math history), your expectations and reasons for taking the course, and something fun you did over break. 
+
+Part 3: Read Appendix D reminders from algebra and calculus (pp. 462/463)
+
