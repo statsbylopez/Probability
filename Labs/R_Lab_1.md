@@ -315,7 +315,7 @@ sample(1:10,1)
 ```
 
 ```
-## [1] 6
+## [1] 8
 ```
 
 
@@ -327,7 +327,7 @@ roll
 ```
 
 ```
-##  [1] 6 6 4 6 4 1 2 1 6 5
+##  [1] 5 4 6 2 4 2 2 5 1 5
 ```
 
 **Question 2** Repeat 10 rolls of a six-sided die as in above. Why do you keep getting different answers?
@@ -342,7 +342,7 @@ sum(roll==2)
 ```
 
 ```
-## [1] 1
+## [1] 3
 ```
 
 
@@ -354,7 +354,7 @@ sum(sample(1:6,600,replace=TRUE) == 2)
 ```
 
 ```
-## [1] 106
+## [1] 114
 ```
 
 #### Plots and Graphs
