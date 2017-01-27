@@ -10,14 +10,14 @@ output: html_document
 
 - Format: 	Typed or handwritten. Answer clearly and concisely. Show all work - credit will not be given for numerical solutions that appear without explanation.. Use smooth edged paper (not ripped from a notebook) and staple pages together.
 
-- Turn in problems with a * only
+- Turn in **bolded** problems only
 
-- On the top of every homework, write the names of everyone you collaborated with in doing problems. All students, staff and faculty are bound by the Skidmore College Honor Code.
+- On the top of every homework, write the names of everyone you collaborated with in doing problems. All students, staff and faculty are bound by the Skidmore College Honor Code. 
 
 
 **Assignment**
 
-$1.7, 1.8*, 1.20*, 1.21, 1.22*, 1.25, 1.27, 1.32*, 1.33, 1.37, 1.42, 1.47*$
+1.7, **1.8**, **1.20**, 1.21, **1.22**, 1.25, 1.27, **1.32**, 1.33, 1.37, 1.42, **1.47**
 
 For 1.47, choose a random experiment and probability for which you can obtain the exact answer. Include your exact solution together with your simulation result. Include a printout of the Rcode & results of the simulation. Be creative!
 
