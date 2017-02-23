@@ -1,0 +1,26 @@
+---
+title: "Homework 5"
+author: MA 204
+output: html_document
+---
+
+**General Instructions for Homeworks**
+
+- Textbook: 	Probability with Applications and R by Dobrow
+
+- Format: 	Typed or handwritten. Answer clearly and concisely. Show all work - credit will not be given for numerical solutions that appear without explanation.. Use smooth edged paper (not ripped from a notebook) and staple pages together.
+
+- Turn in **bolded** problems only
+
+- On the top of every homework, write the names of everyone you collaborated with in doing problems. All students, staff and faculty are bound by the Skidmore College Honor Code.
+
+
+**Assignment**
+
+Part I: 3.29, 3.31, 3.33, **3.34**, **3.36**, **3.37**, 4.1, 4.3, **4.8**
+
+
+**Part II**: Turn in the following on a separate sheet of paper from the regular homework. Make up a problem for the upcoming exam. Write your question clearly and exactly as you want it to appear on the exam. Also write up the solution to your problem. The solution should be well written and clear. Use proper notation, with variables well defined. Your question may cover any of the material from the first four chapters of the book. Be creative! 
+
+
+
