@@ -1,0 +1,119 @@
+---
+title: "MS 204 Lab 3 solutions"
+author: "PUT YOUR NAME HERE"
+output: html_document
+---
+
+
+### Exercise 1
+
+Use the appropriate function (dbinom, pbinom, rbinom) to find the probability that a binomial random variable `X` is less than 7 given that the number of trials is 20, and p=.4.
+
+```{r}
+pbinom(6, 20, 0.4)
+```
+
+**The probability that `X` is less than 7 given 20 trials with p = 0.4 is about 0.25.**
+
+### Exercise 2
+
+Which is more likely to happen? 
+
+- A. You flip a coin 10 times and get exactly 5 heads
+
+- B. You flip a coin 100 times and get exactly 50 heads
+
+- C. You flip a coin 1000 times and get exactly 500 heads
+
+Use either `dbinom`, `rbinom` or `pbinom` (whichever is appropriate here) to find out.  Are you suprised by the answer?
+
+```{r}
+dbinom(5, 10, 0.5)
+dbinom(50, 100, 0.5)
+dbinom(500, 1000, 0.5)
+```
+
+**The probabilities are 0.25 (10 tosses, 5 heads), 0.08 (100 tosses, 500 heads), and 0.025 (1000 tosses, 500 heads). I'm not surprised, but then again I'm your teacher so I shouldn't be surprised. Are you?**
+
+### Exercise 3
+
+
+**The barplot is symmetric when p is roughly 0.5. Skewness increases as p becomes further away from 0.5 (towards 0 or 1)**
+
+### Exercise 4
+
+This exercise is very similar to what we did for Henry and his burned pancakes.
+
+Here we are learning about a Surgeon named Dr. Frankenfurter.  Dr Frankenfurter performs 9 surgeries a day.  Dr. Frankenfurter is an excellent surgeon, but even excellent surgeons sometimes make mistakes.  Let's say that Dr. Frankenfurter has a .008 chance of making a mistake for each surgery, and that surgeries are independent of each other.  
+
+#### Exercise 4a
+
+Simulate the random variable X, where X = the number of times that Dr. F makes a mistake in a surgery in a day, keeping in mind he performs 9 surgeries each day.
+
+```{r}
+mylist<-c(rep(1, 8), rep(0,992))
+Bern.Trials.9<-sample(mylist, 9, replace=TRUE)
+X<-sum(Bern.Trials.9)
+X
+```
+
+
+
+
+#### Exercise 4b
+
+Simulate 10000 days of Dr. Frankenfurter performing 9 surgeries a day.  Make a barplot of the number of mistakes he makes each day (as we did with Henry and his burned pancakes):
+
+```{r}
+set.seed(0)
+number.mistakes<-NULL #making an empty list
+n.days<-10000  #number of days Henry makes pancakes
+
+for (i in 1:n.days){
+
+  Bern.Trials.9<-sample(mylist, 9, replace=TRUE)
+  X<-sum(Bern.Trials.9)  #Adding up the 4 Independent Bernoulli Trials to get my Binomial variable
+  number.mistakes<-c(number.mistakes, X)
+}
+
+table(number.mistakes)/n.days
+
+barplot(table(number.mistakes),names.arg=c(0,1,2), main="Number of Pancakes Henry Burned", col="chocolate4")  
+```
+
+In our simulation, he made 0 mistakes on 92.9 percent of days, 1 mistake on 6.78 percent of days, and 2 mistakes on 0.25 percent of days.
+
+#### Exercise 4c
+
+Based on your results in 4b, how likely is Dr. Frankfurter to make 2 or more mistakes in a day? Verify your results using either `dbinom`, `rbinom` or `pbinom.`
+
+**Our simulations found 2 or more mistakes on 0.12 percent of days. We can get a similar fraction using `pbinom()`**
+
+```{r}
+1 - pbinom(1, 9, 0.008)
+```
+
+**The true probability of 2 or more mistakes is 0.0022, which roughly resembles our simulated findings (0.0025)**
+
+### Exercise 5
+
+On an assembly line, there is a 1% chance that a manufactured component is defective. Every day, 100 parts come off the assembly line. Find the probability that at least two parts are defective using the following
+
+- (i)	Simulating using the R command rbinom(x,n,p)
+- (ii) The R command dbinom and/or pbinom
+- (iii)	Without using technology, by writing an expression for the desired result
+
+```{r}
+rand.draw <- rbinom(1000, 100, 0.01)
+mean(rand.draw >= 2)
+```
+
+**(i)** By simulation, about 26.5 percent (answers may vary).
+
+```{r}
+1 - pbinom(1, 100, 0.01)
+```
+
+**(ii)** By using `pbinom()` as above, about 26.4 percent.
+
+**(iii)** As entered into R, `1 - (100)*(0.01)^1*(0.99)^99 - (0.01)^0*(0.99)^100` = 0.264
