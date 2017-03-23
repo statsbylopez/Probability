@@ -1,0 +1,138 @@
+---
+title: "MA 204 Ch. 5 Lab"
+author: "YOUR NAME"
+---
+
+Open a new R Markdown file (File / New File / R Markdown...).  Set the output to HTML mode, and click "Knit HTML" at the top (or Command+Shift+K on Mac).  This should produce a web page with the knitting procedure executing your code blocks.  You can edit this new file to produce homeworks (if you want to use RStudio) or final versions of your lab.
+
+**It may be helpful to use the Lab05.Rmd file on Github as a template for your submission**.  Feel free to do so.  You access the raw code by clicking on the `raw` button.
+
+Notice how the text you write in the .Rmd file shows up in the output file each time you click "Knit HTML".  
+
+***General instructions for labs***: 
+
++  Open the R Markdown file (.Rmd) from the course Github page
++  Change the heading to include your author name
++  Save the R Markdown file (named as:  [MikeID]-[Lab01].Rmd -- e.g. "mlopez-Lab01.Rmd") to somewhere where you'll be able to access it later (zip drive, My Documents, Dropbox, etc)
++  Your file should contain the code/commands to answer each question in its own code block, which will also produce plots that will be automatically embedded in the output file
++  Each answer must be supported by written statements (unless otherwise specified) as well as any code used
+
+
+## Lab 5
+
+
+Today our lab will deal with Geometric and Negative Binomial Random variables.
+
+### Simulating a geometic random variable.  
+
+Let's say we want to simulate a singe random variable: X ~ Geometric(.3)
+
+```{r}
+my.list<-c(rep(1, 3), rep(0,7))
+n<-1000
+sampled<-sample(my.list, n, replace=TRUE )  #sample draws with replacement
+index<-1:n  
+index.success<-index[sampled==1]
+index.success[1]  # will return the first success, if there is a success
+```
+
+Go step by step through the above code. What is each step doing?
+
+That was pretty complicated!  
+
+Fortunately, we don't have to do this always... Instead we can use some built in functions:
+
+Take a moment and try different values in the functions below:
+
+```{r}
+dgeom(4, .3)    #returns the probability of being equal to a particular value for a Geometric random variable
+pgeom(4, .3)    #returns the probability of being <= to a particular value for a Geometric random variable
+rgeom(4, .3)    #generates one or more Geometric random variables
+```
+
+
+#### Question 1 
+
+
+What are the each of the above calculations doing? Explain R's syntax for the geometric distribution, and how it differs from our book. As a hint, why does `rgeom(4, 0.3)` sometimes return a zero?
+
+
+[INSERT YOUR Response TO EXERCISE 1b HERE]
+
+
+
+### Simulating a negative binomial random variable 
+
+
+Here's a way of doing the negative binomial distribution by hand:
+
+X~NegativeBinomial(2, .3)
+
+```{r}
+my.list<-c(rep(1, 3), rep(0,7))
+n<-1000
+sampled<-sample(my.list, n, replace=TRUE )  #sample a lot with replacement
+index<-1:n  
+index.success<-index[sampled==1]
+index.success[2]  # will return the index second success
+```
+
+**Note: It's not worth using R's functions for the negative binomial distribution, as they are too annoying**
+
+### Exercise 2
+
+Giles is thinking about shaving his beard.  Each day he has a 0.15 chance of shaving his beard.  Assume independence.  What is the probability that Giles will shave his beard for the first time 
+
+(i) on the 10th day?  
+(ii) after the 14th day? 
+(iii) on the 8th day or prior?
+
+Calculate these by hand, and then use R to verify your results.
+
+[INSERT CODE HERE]
+
+
+### Exercise 3
+
+Here's an update on Giles' beard progress.  Giles has gone 40 days without shaving his beard, and now he has a pretty sizable beard.  Given that Giles has not shaved his beard in the first 40 days, what is the proability that Giles will shave his beard on the 50th day?  How does this answer compare to the first part of your answer above?
+
+
+
+
+### Exercise 4
+
+Happy Meals at McDonalds contain Frozen characters: 6 total, one each of Elsa, Anna, Sven, Kristoff, Olaf, and Hans. 
+
+*Note*: you can store characters using the command `frozen <- c("Elsa","Anna",...)' in R. 
+
+```{r}
+index.elsa<-NULL
+index.all<-NULL
+for(i in 1:1000){
+frozen <- c("Elsa","Anna","Kristoff","Hans","Sven","Olaf")
+n<-1000
+sampled<-sample(frozen, n, replace=TRUE )  #sample a lot with replacement
+index<-1:n  
+index.elsa[i]<-index[sampled=="Elsa"][1]
+index.all[i]<-max(index[sampled=="Elsa"][1],
+    index[sampled=="Anna"][1],index[sampled=="Kristoff"][1],
+    index[sampled=="Hans"][1],index[sampled=="Sven"][1],
+    index[sampled=="Olaf"][1])
+}
+```
+
+
+(i) Use the R simulation above to estimate the average number of Happy Meals until a person has received the Elsa character. Does this match your expectation? Why or why not?
+
+(ii) What is the variance of the average number of Happy Meals until a person has received the Elsa character? Check using the simulation above, and compare to $p/(1-p^2)$, the variance of the geometric distribution with probability *p*.
+
+(iii) Next, use the simulation above to estimate the average number of Happy Meals until a person has received each of the characters from Frozen. Does this match your expectation? Why or why not? 
+
+
+
+
+
+
+
+
+
