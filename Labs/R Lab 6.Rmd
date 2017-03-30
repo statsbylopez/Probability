@@ -154,15 +154,15 @@ part.1 - part.2 + part.3
 ```{r}
 
 ```
+ 
 
-
-5.  Simulate the Variance(X+Y) when X~exponential(3), Y~exponential(3)
+5.  Simulate the Variance(X+Y) when X ~ exponential(3), Y ~ exponential(3)
 
 ```{r}
 
 ```
 
-6.  Plot the simulated pdf of (X+Y), when X~exponential(3), Y~exponential(3)
+6.  Plot the simulated pdf of (X+Y), when X ~ exponential(3), Y ~ exponential(3)
 
 ```{r}
 
