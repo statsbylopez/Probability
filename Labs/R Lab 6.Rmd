@@ -1,0 +1,170 @@
+---
+title: "MA 204 Ch. 6 Lab"
+author: "YOUR NAME"
+--- 
+
+Open a new R Markdown file (File / New File / R Markdown...).  Set the output to HTML mode, and click "Knit HTML" at the top (or Command+Shift+K on Mac).  This should produce a web page with the knitting procedure executing your code blocks.  You can edit this new file to produce final versions of your lab.
+
+**It may be helpful to use the Lab06.Rmd file on Github as a template for your submission**.  Feel free to do so.  You access the raw code by clicking on the `raw` button.
+
+Notice how the text you write in the .Rmd file shows up in the output file each time you click "Knit HTML".  
+
+***General instructions for labs***: 
+
++  Open the R Markdown file (.Rmd) from the course Github page
++  Change the heading to include your author name
++  Save the R Markdown file (named as:  [MikeID]-[Lab01].Rmd -- e.g. "mlopez-Lab01.Rmd") to somewhere where you'll be able to access it later (zip drive, My Documents, Dropbox, etc)
++  Your file should contain the code/commands to answer each question in its own code block, which will also produce plots that will be automatically embedded in the output file
++  Each answer must be supported by written statements (unless otherwise specified) as well as any code used
+
+### The apply function
+
+One cool thing about r is that it includes many time saving functions.  Let's say I had a matrix a 30000x5 matrix and I wanted to find out the median of each row in the matrix filled with random normally distributed variables:
+
+```{r}
+rnormalz<-rnorm((30000*5))  #generating the numbers
+rn.matrix<-matrix(rnormalz, ncol=5)  #putting the numbers in a matrix with 5 collumns
+```
+
+To find the median in each row I could write a loop like this:
+
+```{r}
+start <- proc.time()
+medians <- NULL #making a vector to put my 300000 medians in
+for(i in 1: 30000){
+    medians <- c(medians, median(rn.matrix[i,]))  #takes the median of the ith row
+}
+end <- proc.time()
+
+end[3] - start[3]
+```
+
+This loop takes a little while to run!  Let's use something called the apply function to make this go faster!
+
+with the the apply function, I pass in three arguments:
+1.  the matrix I am interested in
+2.  whether I want to look at rows (pass in 1) or collumns (pass in 2)
+3.  the function I want to perform on each row or collumn
+
+Let's try the apply function:
+
+```{r}
+start <- proc.time()
+medians <- apply(rn.matrix, 1, median) # takes the median of each row of the rn.matrix 
+end <- proc.time()
+end[3] - start[3]
+```
+
+That was much faster!! We will get a chance to use the apply function today.
+
+Here are some other examples of ways to use the apply function:
+
+```{r}
+
+means.row<-apply(rn.matrix, 1, mean) # takes the mean of each row of the rn.matrix matrix
+
+means.col<-apply(rn.matrix, 2, mean) #takes the mean of each collumn of the rn.matrix matrix
+
+sums.col<-apply(rn.matrix, 2, sum) #takes the sum of each collumn of the rn.matrix matrix
+
+```
+
+
+
+##### Back to our regularly scheduled probability
+
+Today we will get to look at Expectations and Variances, and how we can use R to double check our answers.
+
+### Properties of expectations and variances
+
+E(aX+b) = aE(X)+b, 
+E(X+Y) = E(X)+E(Y), 
+
+V(X) = E[ (X-E(X))^2 ], 
+V(X) = E(X^2 ) -[E(X)^2 ], 
+V(aX+b) = aV(X)
+
+### Variance
+
+Let's Simulate an exponential random variable with lambda parameter=.2 many many times:
+
+```{r}
+X <- rexp(100000, .2)
+
+plot(density(X), col="blue", lwd=2, main="X~exp(.2)")
+```
+
+
+1. Check that the mean of `X` matches what you expected it to be, and confirm that this appears appropriate in the plot. 
+
+The variance of an exponentail(0.2)= 1/(0.2)^2
+
+Let's use our many many exponentials to see if we get something close to this
+
+```{r}
+1/(0.2)^2
+mean(X^2) - (mean(X))^2 #variance
+var(X) #also the variance
+```
+
+2. Let Y = -2X + 4, which you can store in R by using `Y <- -2*X + 4`. Find the mean and variance of `Y` by hand, and use R to confirm your answers. 
+
+```{r}
+
+```
+
+#### Independence
+
+
+Now let's let X~exp(.2), Y~exp(.4), and X and Y are Independent.
+
+We want to simulate Var(3x-4Y+2):
+
+```{r}
+X<-rexp(100000, .2)
+Y<-rexp(100000, .4)
+
+function.X.Y<-(3*X - 4*Y + 2)
+
+var(function.X.Y) #Var(3X-4Y+2)
+
+plot(density(function.X.Y), col="blue", lwd=2, main="3x-4Y+2")
+```
+
+
+
+Let's compare our result to  Var(3X) - Var(4y) + Var(2)
+
+```{r}
+part.1 = var(3*X)         #Var(3X)
+
+part.2 = var(4*Y)         #Var(4Y)
+
+part.3 <- mean((2)^2) - (mean(2))^2 #Var(2)
+
+part.1 - part.2 + part.3
+
+```
+
+3. What's wrong with the above? Make it right
+
+
+4. Simulate the E(X+Y) when X ~ exponential(3), Y ~ exponential(3), and confirm that your answer matches results when solving by hand 
+
+```{r}
+
+```
+
+
+5.  Simulate the Variance(X+Y) when X~exponential(3), Y~exponential(3)
+
+```{r}
+
+```
+
+6.  Plot the simulated pdf of (X+Y), when X~exponential(3), Y~exponential(3)
+
+```{r}
+
+```
+
