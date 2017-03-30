@@ -1,0 +1,25 @@
+---
+title: "Homework 8"
+author: MA 204
+output: html_document
+---
+
+**General Instructions for Homeworks**
+
+- Textbook: 	Probability with Applications and R by Dobrow
+
+- Format: 	Typed or handwritten. Answer clearly and concisely. Show all work - credit will not be given for numerical solutions that appear without explanation.. Use smooth edged paper (not ripped from a notebook) and staple pages together.
+
+- Turn in **bolded** problems only
+
+- On the top of every homework, write the names of everyone you collaborated with in doing problems. All students, staff and faculty are bound by the Skidmore College Honor Code.
+
+
+**Assignment**
+
+6.1ab, **6.2**, 6.7, **6.8**, 6.11, **6.57**, **6.12**, 6.17, **6.18**
+
+Note: for 6.18 part (b), the question is referring to the Exponential distribution in part (a) 
+
+
+
