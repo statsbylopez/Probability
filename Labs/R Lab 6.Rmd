@@ -97,7 +97,7 @@ plot(density(X), col="blue", lwd=2, main="X~exp(.2)")
 
 1. Check that the mean of `X` matches what you expected it to be, and confirm that this appears appropriate in the plot. 
 
-The variance of an exponentail(0.2)= 1/(0.2)^2
+The variance of an exponential(0.2) = 1/(0.2)^2
 
 Let's use our many many exponentials to see if we get something close to this
 
@@ -116,7 +116,7 @@ var(X) #also the variance
 #### Independence
 
 
-Now let's let X~exp(.2), Y~exp(.4), and X and Y are Independent.
+Now let's let X ~ exp(.2), Y ~ exp(.4), and X and Y are Independent.
 
 We want to simulate Var(3x-4Y+2):
 
