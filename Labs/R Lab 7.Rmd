@@ -268,7 +268,7 @@ Play around with the code below to learn about two normal variables (X and Y) th
 
 # Some variable definitions
 mu1 <- 0  # mean of X 
-mu2 <- 0  # mean of Y 
+mu2 <- 0  # mean of Y  
 sig1 <- 1.25	# variance of X 
 sig2 <- 1.25	# variance of Y
 rho <- .0	# corr(x, y) correlation of X and Y try changing this around
