@@ -1,0 +1,21 @@
+---
+title: "Homework 9"
+author: MA 204
+output: html_document
+---
+
+**General Instructions for Homeworks**
+
+- Textbook: 	Probability with Applications and R by Dobrow
+
+- Format: 	Typed or handwritten. Answer clearly and concisely. Show all work - credit will not be given for numerical solutions that appear without explanation.. Use smooth edged paper (not ripped from a notebook) and staple pages together.
+
+- Turn in **bolded** problems only
+
+- On the top of every homework, write the names of everyone you collaborated with in doing problems. All students, staff and faculty are bound by the Skidmore College Honor Code.
+
+
+**Assignment**
+
+6.19, **6.20ab**, **6.32**, 6.33, **6.34**, 6.35,  **6.58**
+
