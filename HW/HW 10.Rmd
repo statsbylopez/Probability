@@ -1,0 +1,25 @@
+---
+title: "Homework 10"
+author: MA 204
+output: html_document
+---
+
+**Assignment**
+
+Our goal is to link real life outcomes to methods we have discussed in class. Given the short turnaround, do not attempt a fancy, creative, or lengthy report. Instead, a quick summary of the data (where, when and how it was collected), a link to the topic (type of data/distribution), relevant calculations (a sample probablity, a histogram of the data, etc), and a brief summary is all that's required. 
+
+*Source*: Any popular media source, any online data, or any data that you can quickly collect yourself. 
+
+*Examples*: 
+
+**1**: [Patriots coin tosses](http://www.cbssports.com/nfl/news/patriots-have-no-need-for-probability-win-coin-flip-at-impossible-clip/)
+
+**2**: [Skidmore hockey goals per game](http://www.skidmoreathletics.com/schedule.aspx?path=mhockey)
+
+**3**: [Results from a game of blackjack](https://saratogacasino.com/) 
+
+*Output*: 3-5 minute presentation in Tuesday's class
+
+*Grade*: One homework grade
+
+*Notes*: You may work alone or with a partner. If you choose to work with a partner, the expectation is that there will be roughly twice the amount of work shown/produced. 
