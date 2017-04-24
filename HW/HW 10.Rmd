@@ -5,7 +5,7 @@ output: html_document
 ---
 
 **Assignment**
-
+ 
 Our goal is to link real life outcomes to methods we have discussed in class. Given the short turnaround, do not attempt a fancy, creative, or lengthy report. Instead, a quick summary of the data (where, when and how it was collected), a link to the topic (type of data/distribution), relevant calculations (a sample probablity, a histogram of the data, etc), and a brief summary is all that's required. 
 
 *Source*: Any popular media source, any online data, or any data that you can quickly collect yourself. 
