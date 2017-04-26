@@ -146,18 +146,18 @@ First, a bit of background. At the end of any regular season game in which the t
 
 Our interest lies in whether or not shootouts are random, or whether there is some inherent skill on behalf of individual players which allows them to perform at higher or lower levels. We will specifically look at goalies.
 
-The overall save rate in shootouts for NHL goalies is $67.2\%$. Let $X_1, X_2, ... X_n$ be inidividual shootout attempts for an individual goalie. 
+The overall save rate in shootouts for NHL goalies is 67.2 percent. Let *X_1, X_2, ... X_n* be inidividual shootout attempts for an individual goalie. 
 
-**Question 5: Using the Central Limit Theorem, estimate $E[(X_1 + ...X_n)/n]$ and $Var[(X_1 + ...X_n)/n]$**
-
-[INSERT ANSWER HERE]
-
-
-**Question 6: New York's Henrik Lundqvist has faced 327 shootout attempts. Using the central limit theorem, what is the distribution of $(X_1 + ...X_{327})/327$? If we can be $95\%$ confident Lundqvist's sample mean will fall within two standard deviations of the overall player mean, where do we expect Lundqvist's sample mean to lie?**
+**Question 5: Using the Central Limit Theorem, estimate *E[(X_1 + ...X_n)/n]* and *Var[(X_1 + ...X_n)/n]* **
 
 [INSERT ANSWER HERE]
 
-**Question 7: Lundqvist has stopped 245 of 327 attemps. Using your answer to part (2b), calculate the probability that a goalie finishes with a $higher$ propoprtion of saves than Lundqvist has.**
+
+**Question 6: New York's Henrik Lundqvist has faced 327 shootout attempts. Using the central limit theorem, what is the distribution of (X_1 + ...X_{327})/327? If we can be 95 percent confident Lundqvist's sample mean will fall within two standard deviations of the overall player mean, where do we expect Lundqvist's sample mean to lie?**
+
+[INSERT ANSWER HERE]
+
+**Question 7: Lundqvist has stopped 245 of 327 attemps. Using your answer to part (2b), calculate the probability that a goalie finishes with a *higher* propoprtion of saves than Lundqvist has.**
 
 [INSERT ANSWER HERE]
 
@@ -204,7 +204,7 @@ Go to the url `http://www.sportingcharts.com/stats/nhl/all-time/career-goalie-sh
 
 ## Random walks
 
-Random walks are fundamental models in numerous fields. A particle starts at the origin on the integer number line.  At each step, the particle moves left or right with probability 1/2. Find the expectation and standard deviation of the distance of the walk from the origin after $n$ steps. 
+Random walks are fundamental models in numerous fields. A particle starts at the origin on the integer number line.  At each step, the particle moves left or right with probability 1/2. Find the expectation and standard deviation of the distance of the walk from the origin after n steps. 
 
 ```{r}
 simlist<-NULL
@@ -227,12 +227,15 @@ steps<-10000
 rw<-sample(c(-1,1),steps,replace=T)
 plot(c(1,1),type="n",xlim=c(0,steps),ylim=c(-200,200),xlab="",ylab="Position")
 lines(cumsum(rw),type="l")
+
+rw<-sample(c(-1,1),steps,replace=T)
+lines(cumsum(rw),type="l")
 ```
 
 $Note$: `returns` the cumulative sum of all elements in an argument. Try `cumsum(1:10)` for example.
 
 
-### Question 3c (bonus)
+**Bonus question**
 
-Let $S_n = X_1 + ... X_n$ be the position of the walk after the $n^{th}$ move. Find $E[S_n]$ and $Var[S_n]$ (Hint: Start by considering $E[X_1]$ and $Var[X_1]$. No coding needed.)
+Let S_n = X_1 + ... X_n be the position of the walk after the nth move. Find *E[S_n]* and *Var[S_n]* (Hint: Start by considering *E[X_1]* and *Var[X_1]*. No coding needed.)
 
