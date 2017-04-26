@@ -21,9 +21,7 @@ Notice how the text you write in the .Rmd file shows up in the output file each 
 
 Let's look into the Central Limit Theorem which states:
 
-X~iid
-as n->infinity:  P([X.bar-E(X)]/(SD(X)/sqrt(n))<c) is equivalent to P(Z<c)
-Where Z~Normal(0,1)
+X ~ iid as n->infinity: P([X.bar-E(X)]/(SD(X)/sqrt(n))<c) is equivalent to P(Z<c), where Z~Normal(0,1)
 
 This is a huge deal.
 
