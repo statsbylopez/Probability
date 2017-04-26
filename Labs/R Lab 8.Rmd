@@ -2,7 +2,7 @@
 title: "MA 204 Ch. 9 Lab"
 author: "YOUR NAME"
 --- 
-
+ 
 Open a new R Markdown file (File / New File / R Markdown...).  Set the output to HTML mode, and click "Knit HTML" at the top (or Command+Shift+K on Mac).  This should produce a web page with the knitting procedure executing your code blocks.  You can edit this new file to produce final versions of your lab.
 
 **It may be helpful to use the Lab06.Rmd file on Github as a template for your submission**.  Feel free to do so.  You access the raw code by clicking on the `raw` button.
